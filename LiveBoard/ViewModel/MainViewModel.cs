@@ -198,8 +198,6 @@ namespace LiveBoard.ViewModel
 		{
 			Debug.WriteLine("tick at {0} and Elapsed {1}", DateTime.Now.ToString("u"), (DateTime.Now - StartTime).ToString("g"));
 
-			// TODO: 로직이 들어가야 한다.
-
 			--CurrentRemainedSecond;
 			if (CurrentRemainedSecond < 0)
 			{

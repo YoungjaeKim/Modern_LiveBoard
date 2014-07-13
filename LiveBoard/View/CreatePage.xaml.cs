@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using Windows.ApplicationModel.Resources;
@@ -11,7 +10,6 @@ using Windows.UI.Xaml.Controls;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using GalaSoft.MvvmLight.Messaging;
 using LiveBoard.Common;
@@ -325,6 +323,18 @@ namespace LiveBoard.View
 		{
 			if (PressPlusButtonInstruction.Visibility == Visibility.Visible)
 				PressPlusButtonInstruction.Visibility = Visibility.Collapsed;
+		}
+
+		private void CreatePage_OnSizeChanged(object sender, SizeChangedEventArgs e)
+		{
+			if (e.NewSize.Width < 1280)
+			{
+				VisualStateManager.GoToState(this, "Snapped", true);
+			}
+			else
+			{
+				VisualStateManager.GoToState(this, "FullScreenPortrait", true);
+			} 
 		}
 	}
 }

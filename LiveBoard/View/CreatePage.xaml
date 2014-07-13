@@ -13,7 +13,7 @@
     x:Name="pageRoot"
     x:Class="LiveBoard.View.CreatePage"
     NavigationCacheMode="Required"
-    mc:Ignorable="d" Loaded="pageRoot_Loaded">
+    mc:Ignorable="d" Loaded="pageRoot_Loaded" SizeChanged="CreatePage_OnSizeChanged">
 
 	<common:LayoutAwarePage.Resources>
 		<DataTemplate x:Key="DefaultTemplate" />
@@ -114,6 +114,18 @@
 						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="Style">
 							<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedPageHeaderTextStyle}"/>
 						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="PreviewGrid" Storyboard.TargetProperty="Visibility">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="PreviewColumnDefinition" Storyboard.TargetProperty="Width">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="PreviewButtonTextBlock" Storyboard.TargetProperty="Visibility">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="PlayButtonTextBlock" Storyboard.TargetProperty="Visibility">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+						</ObjectAnimationUsingKeyFrames>
 					</Storyboard>
 				</VisualState>
 			</VisualStateGroup>
@@ -147,7 +159,7 @@
 						<Grid Width="40" Height="40" Background="{StaticResource LbBlueKeyBrush}">
 							<Image Source="../Images/appbar.monitor.play.png" Margin="2" />
 						</Grid>
-						<TextBlock x:Uid="Preview" Text="Preview" VerticalAlignment="Center" FontSize="24" 
+						<TextBlock x:Name="PreviewButtonTextBlock" x:Uid="Preview" Text="Preview" VerticalAlignment="Center" FontSize="24" 
 						   Margin="10,0,0,0" Foreground="{StaticResource LbBlueKeyBrush}" />
 					</StackPanel>
 				</Button>
@@ -157,7 +169,7 @@
 						<Grid Width="40" Height="40" Background="{StaticResource LbRedKeyBrush}">
 							<Image Source="../Images/appbar.control.play.png" Margin="2" />
 						</Grid>
-						<TextBlock x:Uid="PlayBoard" Text="Play Board" VerticalAlignment="Center" FontSize="24" 
+						<TextBlock x:Name="PlayButtonTextBlock" x:Uid="PlayBoard" Text="Play Board" VerticalAlignment="Center" FontSize="24" 
 						   Margin="10,0,0,0" Foreground="{StaticResource LbRedKeyBrush}" />
 					</StackPanel>
 				</Button>
@@ -167,7 +179,7 @@
 		<Grid Grid.Row="1" Margin="40,40,0,20">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="2*"/>
-				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="1*" x:Name="PreviewColumnDefinition"/>
 			</Grid.ColumnDefinitions>
 
 			<!-- 좌측 Pages와 Details 컬럼 -->
@@ -363,7 +375,7 @@
 			</Grid>
 
 			<!-- 우측 Preview 부분 -->
-			<Grid Grid.Column="1" DataContext="{Binding ElementName=ListViewPages, Path=SelectedItem, Mode=OneWay}">
+			<Grid x:Name="PreviewGrid" Grid.Column="1" DataContext="{Binding ElementName=ListViewPages, Path=SelectedItem, Mode=OneWay}">
 				<Grid Margin="20,0,20,0">
 					<Grid>
 						<StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">

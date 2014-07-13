@@ -418,29 +418,24 @@
     <Reference Include="PerpetuumSoft.WinRT.Framework">
       <HintPath>packages\PerpetuumSoft.Controls.2.0.1\lib\winrt\PerpetuumSoft.WinRT.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Core, Version=2013.3.1105.45, Culture=neutral, PublicKeyToken=54096b0481e00341, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\W8X\2013.3.1105.45\Core\Telerik.Core.dll</HintPath>
+    <Reference Include="Telerik.Core">
+      <HintPath>lib\W8X\2014.2.617.45\Core\Telerik.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.UI.Xaml.Chart, Version=2013.3.1105.45, Culture=neutral, PublicKeyToken=54096b0481e00341, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\W8X\2013.3.1105.45\Chart\Telerik.UI.Xaml.Chart.dll</HintPath>
+    <Reference Include="Telerik.UI.Xaml.Chart">
+      <HintPath>lib\W8X\2014.2.617.45\Chart\Telerik.UI.Xaml.Chart.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.UI.Xaml.DataVisualization, Version=2013.3.1105.45, Culture=neutral, PublicKeyToken=54096b0481e00341, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\W8X\2013.3.1105.45\DataVisualization\Telerik.UI.Xaml.DataVisualization.dll</HintPath>
+    <Reference Include="Telerik.UI.Xaml.DataVisualization">
+      <HintPath>lib\W8X\2014.2.617.45\DataVisualization\Telerik.UI.Xaml.DataVisualization.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.UI.Xaml.Input, Version=2013.3.1105.45, Culture=neutral, PublicKeyToken=54096b0481e00341, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\W8X\2013.3.1105.45\Input\Telerik.UI.Xaml.Input.dll</HintPath>
+    <Reference Include="Telerik.UI.Xaml.Input">
+      <HintPath>lib\W8X\2014.2.617.45\Input\Telerik.UI.Xaml.Input.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.UI.Xaml.Primitives, Version=2013.3.1105.45, Culture=neutral, PublicKeyToken=54096b0481e00341, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\W8X\2013.3.1105.45\Primitives\Telerik.UI.Xaml.Primitives.dll</HintPath>
+    <Reference Include="Telerik.UI.Xaml.Primitives">
+      <HintPath>lib\W8X\2014.2.617.45\Primitives\Telerik.UI.Xaml.Primitives.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WinRTXamlToolkit, Version=1.5.4.3, Culture=neutral, processorArchitecture=MSIL">
